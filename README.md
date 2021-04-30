@@ -1,15 +1,26 @@
 # ArpSpoof
-A python script to conduct an MITM attack using ARP Poisoning
+A command line Python Script that can be used to conduct an MITM attack on a local Network.
 
-## Prerequirements
+## Prerequisites
 You need to be root to run all parts of the script. Do this by 
 ```
 sudo su
 ```
-scapy needs to be installed as user and sudo 
+Next, follow the commands given below
+
+The first command installs pip3. The second and third install scapy for the root user and regular user
 ```
+sudo apt-get install python3-pip
 sudo pip3 install scapy
 pip3 install scapy
+```
+##### The first command installs pip3. The second and third install scapy for the root user and regular user
+
+For the target to be able to actually access the router, packet forwarding should be turned on.
+
+*Packet Forwarding allows your machine to act as a switch and forward packets between the target and router.*
+```
+echo 1 > /proc/sys/net/ipv4/ip_forward
 ```
 Finally run the script
 ```
